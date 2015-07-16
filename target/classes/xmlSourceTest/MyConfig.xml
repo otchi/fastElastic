@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fastElastic host="http//localhost:9200">
+	<indexes>
+		<index name="myjdbc">
+			<type>mytype</type>
+		</index>
+	</indexes>
+	
+	<requestBean class="com.edifixio.amine.testBean.MyRequest">
+		<mapping nameInBean="mainSearch">
+			<searchIn nameInIndex="company" kindOfSearch="match"/>
+		</mapping>
+		
+		
+	</requestBean>
+	
+	<responceBean class="com.edifixio.amine.testBean.MyResponse">
+		<Load nameInBean="company" nameInIndex="company"/>
+		<Load nameInBean="pdg" nameInIndex="pdg"/>
+		<Load nameInBean="country" nameInIndex="country"/>
+	</responceBean>
+	
+	<facets class="com.edifixio.amine.testBean.FacetBean">
+		<maching nameInBean="Paysfacet" nameInIndex="country" type="term"/>
+	</facets>
+
+</fastElastic>
