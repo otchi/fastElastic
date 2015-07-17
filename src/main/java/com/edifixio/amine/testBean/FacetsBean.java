@@ -2,7 +2,7 @@ package com.edifixio.amine.testBean;
 
 import java.util.Properties;
 
-public class FacetBean {
+public class FacetsBean {
 	private Properties Paysfacet;
 
 	public Properties getPaysfacet() {

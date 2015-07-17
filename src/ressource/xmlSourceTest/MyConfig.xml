@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fastElastic host="http//localhost:9200">
+
 	<indexes>
 		<index name="myjdbc">
 			<type>mytype</type>
@@ -7,9 +8,9 @@
 	</indexes>
 	
 	<requestBean class="com.edifixio.amine.testBean.MyRequest">
-		<mapping nameInBean="mainSearch">
-			<searchIn nameInIndex="company" kindOfSearch="match"/>
-		</mapping>
+		<search nameInBean="mainSearch">
+			<query nameOfField="company" kindOfSearch="match" operator="and"/>
+		</search>
 		
 		
 	</requestBean>
@@ -21,7 +22,9 @@
 	</responceBean>
 	
 	<facets class="com.edifixio.amine.testBean.FacetBean">
-		<maching nameInBean="Paysfacet" nameInIndex="country" type="term"/>
+		<maching nameInBean="Paysfacet" nameInIndex="country">
+				<queryFacet type="term"/>
+		</maching>
 	</facets>
 
 </fastElastic>
