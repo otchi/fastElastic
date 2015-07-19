@@ -8,10 +8,10 @@ import com.edifixio.amine.config.ElasticConfig;
 
 
 @SuppressWarnings("serial")
-public class ReponseConfig extends ElasticConfig<LoadResponse>{
+public class ResponseConfig extends ElasticConfig<LoadResponse>{
 
 
-	public ReponseConfig(Element element) throws ClassNotFoundException {
+	public ResponseConfig(Element element) throws ClassNotFoundException {
 		super(element);
 		// TODO Auto-generated constructor stub
 	}
