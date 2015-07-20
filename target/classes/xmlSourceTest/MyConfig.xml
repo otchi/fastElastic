@@ -12,24 +12,24 @@
 		</index>
 	</indexes>
 	
-	<requestBean class="com.edifixio.amine.testBean.MyRequest">
+	<request class="com.edifixio.amine.testBean.MyRequest">
 		<search nameInBean="mainSearch">
 			<query nameOfField="company" kindOfSearch="match" operator="and"/>
 		</search>
 		
 		
-	</requestBean>
+	</request>
 	
-	<responceBean class="com.edifixio.amine.testBean.MyResponse">
+	<responce class="com.edifixio.amine.testBean.MyResponse">
 		<Load nameInBean="company" nameInIndex="company"/>
 		<Load nameInBean="pdg" nameInIndex="pdg"/>
 		<Load nameInBean="country" nameInIndex="country"/>
-	</responceBean>
+	</responce>
 	
 	<facets class="com.edifixio.amine.testBean.FacetBean">
-		<maching nameInBean="Paysfacet" nameInIndex="country">
+		<faceting nameInBean="Paysfacet" nameInIndex="country">
 				<queryFacet type="term"/>
-		</maching>
+		</faceting>
 	</facets>
 
 </fastElastic>

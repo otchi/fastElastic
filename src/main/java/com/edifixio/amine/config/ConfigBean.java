@@ -2,11 +2,9 @@ package com.edifixio.amine.config;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import javax.xml.ws.Response;
-
-import org.apache.http.client.protocol.ResponseAuthCache;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -18,18 +16,20 @@ import com.edifixio.amine.fastElastic.App;
 
 public class ConfigBean {
 	private String host;
-	private Map<String, ArrayList<String>> indexes;
+	private Map<String, List<String>> indexes;
 	private RequestConfig requestConfig;
 	private FacetsConfig facetsConfig;
 	private ResponseConfig responseConfig;
 
 	public ConfigBean(Document document) throws ClassNotFoundException {
 		super();
-		this.indexes = new HashMap<String, ArrayList<String>>();
+		this.indexes = new HashMap<String, List<String>>();
 		Element root = document.getDocumentElement();
 		host = root.getAttribute("host");
 		this.putIndex((Element) root.getElementsByTagName("indexes").item(0));
-		this.requestConfig=new RequestConfig((Element) root.getElementsByTagName("indexes").item(0));
+		this.requestConfig=new RequestConfig((Element) root.getElementsByTagName("request").item(0));
+		this.responseConfig=new ResponseConfig((Element) root.getElementsByTagName("response").item(0));
+		this.facetsConfig=new FacetsConfig((Element) root.getElementsByTagName("facets").item(0));
 
 	}
 
@@ -58,11 +58,11 @@ public class ConfigBean {
 		this.host = host;
 	}
 
-	public Map<String, ArrayList<String>> getIndexes() {
+	public Map<String, List<String>> getIndexes() {
 		return indexes;
 	}
 
-	public void setIndexes(Map<String, ArrayList<String>> indexes) {
+	public void setIndexes(Map<String, List<String>> indexes) {
 		this.indexes = indexes;
 	}
 

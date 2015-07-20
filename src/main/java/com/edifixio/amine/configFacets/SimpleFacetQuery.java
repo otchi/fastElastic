@@ -1,14 +1,12 @@
 package com.edifixio.amine.configFacets;
 
-public class SimpleFacetQuery implements IQueryFacetConfig{
-	private String field;
+public class SimpleFacetQuery extends Faceting{
 
-	public String getField() {
-		return field;
+	public SimpleFacetQuery(String nameInBean, String nameInIndex) {
+		super(nameInBean, nameInIndex);
+		// TODO Auto-generated constructor stub
 	}
+	
 
-	public void setField(String field) {
-		this.field = field;
-	}
 
 }

@@ -1,17 +1,17 @@
 package com.edifixio.amine.configRequest;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Search {
 
 	private String nameInBean;
-	private ArrayList<IQueryConfig> queries;
+	private List<IQueryConfig> queries;
 
-	public ArrayList<IQueryConfig> getQueries() {
+	public List<IQueryConfig> getQueries() {
 		return queries;
 	}
 
-	public void setQueries(ArrayList<IQueryConfig> queries) {
+	public void setQueries(List<IQueryConfig> queries) {
 		this.queries = queries;
 	}
 
